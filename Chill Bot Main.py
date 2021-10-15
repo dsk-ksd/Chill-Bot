@@ -17,6 +17,15 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
+    # if a user replies to chill bot, chill bot will reply with "Fug off"
+    if message.reference and message.author.id != 898570354904154162:
+        for mention in message.mentions:
+            if mention.id == 898570354904154162:
+                await message.channel.send(
+                    content="Fug off",
+                    reference=message
+                )
+
     await client.process_commands(message)
 
 
@@ -27,4 +36,4 @@ async def ping(ctx):
 
 
 # running the bot
-client.run("ODk4NTcwMzU0OTA0MTU0MTYy.YWmI2w.NZtpa5f83RJrJouULNytn9bynEU")
+client.run("ODk4NTcwMzU0OTA0MTU0MTYy.YWmI2w.lbLAofc_SPHmcy1VcS1Erta7-Yg")
