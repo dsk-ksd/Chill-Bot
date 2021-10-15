@@ -19,6 +19,13 @@ async def on_message(message):
 
     await client.process_commands(message)
 
+    #to reply to some specific messages sent by users
+    if (message.content()).lower() == "hello there" : print("General Kenobi!")
+    if (message.content()).lower() == "understandable" : print("Have a nice day!")
+    if (message.content()).lower() == "dhruv" : print("You mean Supreme Leader Signor Fuhrer Thalapathy Dhruv Sama")
+    if (message.content()).lower() == "naruto" : print("SASUKE!")
+    if (message.content()).lower() == "69" : print("nice ( ͡° ͜ʖ ͡°)")
+
 
 # ping pong
 @client.command()
