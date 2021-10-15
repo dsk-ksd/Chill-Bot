@@ -17,6 +17,15 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
+    # if a user replies to chill bot, chill bot will reply with "Fug off"
+    if message.reference and message.author.id != 898570354904154162:
+        for mention in message.mentions:
+            if mention.id == 898570354904154162:
+                await message.channel.send(
+                    content="Fug off",
+                    reference=message
+                )
+
     await client.process_commands(message)
 
     #to reply to some specific messages sent by users
